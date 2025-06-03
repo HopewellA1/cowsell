@@ -1,6 +1,6 @@
 ﻿using AgriChoice.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.General;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc;
 using System.ComponentModel.DataAnnotations;
 
 namespace AgriChoice.Models
