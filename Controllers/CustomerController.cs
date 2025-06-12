@@ -552,6 +552,16 @@ namespace AgriChoice.Controllers
             
         }
 
+        public IActionResult trackOrder(int id)
+        {
+            var purchase = _context.Purchases.FirstOrDefault(a => a.PurchaseId == id);
+            if (purchase == null)
+            {
+                return NotFound();
+            }
+            return View(purchase);
+        }
+
         // GET: Customer/ViewCow/{id}
         public IActionResult ViewCow(int id)
         {
