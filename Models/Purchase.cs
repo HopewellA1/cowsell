@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AgriChoice.Models
 {
-     public class Purchase
+    public class Purchase
     {
         [Key]
         public int PurchaseId { get; set; }
