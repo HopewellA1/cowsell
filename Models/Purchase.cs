@@ -31,14 +31,17 @@ namespace AgriChoice.Models
         [Required]
         public decimal TotalPrice { get; set; }
 
+
         [Required]
         public Paymentstatus PaymentStatus { get; set; }
+
 
         public enum Paymentstatus
         {
             Pending,
             Completed,
-            Refunded
+            Refunded,
+            
         }
 
         [Required]
@@ -48,7 +51,8 @@ namespace AgriChoice.Models
         {
             Scheduled,
             InTransit,
-            Delivered
+            Delivered,
+            Canceled
         }
 
         public int? ReviewId { get; set; }

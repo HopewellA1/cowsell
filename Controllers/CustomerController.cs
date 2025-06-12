@@ -528,7 +528,29 @@ namespace AgriChoice.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult cancelPurchase(int purchaseId)
+        {
+            var purchase = _context.Purchases.FirstOrDefault(c => c.PurchaseId == purchaseId);
+            if (purchase != null)
+            {
+                purchase.PaymentStatus = Purchase.Paymentstatus.Refunded;
+                purchase.DeliveryStatus = Purchase.Deliverystatus.Canceled;
 
+                _context.Entry(purchase).State = EntityState.Modified;
+                _context.SaveChanges();
+
+
+
+
+            }
+            else
+            {
+
+            }
+            return RedirectToAction("MyOrders");
+            
+        }
 
         // GET: Customer/ViewCow/{id}
         public IActionResult ViewCow(int id)
